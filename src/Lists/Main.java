@@ -79,7 +79,7 @@ public class Main {
         }
 
         for (int i = 0; i < 1000; i++) {
-            l2.add(l2.size(),r1);
+            l2.add(l2.size()-5,r1);
         }
 
         LocalDateTime finishAddLinked = LocalDateTime.now();
@@ -102,7 +102,7 @@ public class Main {
         }
 
         for (int i = 0; i < 1000; i++) {
-            l1.set((int)l1.size()-i-1,r1);
+            l1.set((int)l1.size()-i-5,r1);
         }
 
         LocalDateTime finishMOdArr = LocalDateTime.now();
@@ -146,7 +146,7 @@ public class Main {
         }
 
         for (int i = 0; i < 1000; i++) {
-            l1.remove((int)l1.size()-i-1);
+            l1.remove((int)l1.size()-i-5);
         }
 
         LocalDateTime finishDelArr = LocalDateTime.now();
@@ -180,14 +180,14 @@ public class Main {
 
 }
 
-//        Arraylist creation takes 12ms
-//        Linked list creation takes 28ms
+//        Arraylist creation takes 24ms
+//        Linked list creation takes 56ms
 //        -----------------------------------------------------------
-//        Adding elements to arraylist takes 19ms
-//        Adding elements to Linked list takes 124ms
+//        Adding elements to arraylist takes 18ms
+//        Adding elements to Linked list takes 145ms
 //        -----------------------------------------------------------
-//        Updating elements on arraylist takes 19ms
-//        Updating elements on linked list takes 124ms
+//        Updating elements on arraylist takes 18ms
+//        Updating elements on linked list takes 145ms
 //        -----------------------------------------------------------
-//        Deleting elements from arraylist takes 31ms
-//        Deleting elements from linked list takes 124ms
+//        Deleting elements from arraylist takes 34ms
+//        Deleting elements from linked list takes 145ms
