@@ -30,7 +30,7 @@ public class View {
                         new TaxiPerKm(9, "XA-622-CC", "Daewoo Lanos", 30, 7, 2.75, 8.0),
                         new TaxiPerTime(10, "AX79-91", "Renault 11", 60, 90, 2),
                         new TaxiPerTime(11, "AX79-91", "Renault 11", 60, 90, 5),
-                        new TaxiPerTime(7, "AX82-17-NM", "Renault Logan", 84, 125, 2.5)
+                        new TaxiPerTime(12, "AX82-17-NM", "Renault Logan", 84, 125, 2.5)
 
 
                 )
