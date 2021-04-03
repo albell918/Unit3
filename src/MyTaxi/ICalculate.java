@@ -10,6 +10,7 @@ package MyTaxi;
 public interface ICalculate {
 
     double calcRevenue();
+    String showCarNumber();
 
 
 }

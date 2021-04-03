@@ -60,4 +60,9 @@ public class TaxiPerTime extends Taxi implements ICalculate
                 ", hours=" + hours +
                 '}';
     }
+
+    @Override
+    public String showCarNumber() {
+        return this.getCarNumber();
+    }
 }

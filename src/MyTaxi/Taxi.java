@@ -10,16 +10,16 @@ package MyTaxi;
 public class Taxi implements ICalculate{
 
     private int rideId;
-    private String craNumber;
+    private String carNumber;
     private String carModel;
 
 
     public Taxi() {
     }
 
-    public Taxi(int raceId, String craNumber, String carModel) {
+    public Taxi(int raceId, String carNumber, String carModel) {
         this.rideId = raceId;
-        this.craNumber = craNumber;
+        this.carNumber = carNumber;
         this.carModel = carModel;
     }
 
@@ -31,12 +31,12 @@ public class Taxi implements ICalculate{
         this.rideId = rideId;
     }
 
-    public String getCraNumber() {
-        return craNumber;
+    public String getCarNumber() {
+        return carNumber;
     }
 
-    public void setCraNumber(String craNumber) {
-        this.craNumber = craNumber;
+    public void setCarNumber(String carNumber) {
+        this.carNumber = carNumber;
     }
 
     public String getCarModel() {
@@ -51,7 +51,7 @@ public class Taxi implements ICalculate{
     public String toString() {
         return "Taxi{" +
                 "rideId=" + rideId +
-                ", craNumber='" + craNumber + '\'' +
+                ", craNumber='" + carNumber + '\'' +
                 ", carModel='" + carModel + '\'' +
                 '}';
     }
@@ -59,5 +59,10 @@ public class Taxi implements ICalculate{
     @Override
     public double calcRevenue() {
         return 0;
+    }
+
+    @Override
+    public String showCarNumber() {
+        return this.getCarNumber();
     }
 }

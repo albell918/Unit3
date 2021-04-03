@@ -72,4 +72,9 @@ public class TaxiPerKm extends Taxi implements ICalculate{
                 ", kilometres=" + kilometres +
                 '}';
     }
+
+    @Override
+    public String showCarNumber() {
+        return this.getCarNumber();
+    }
 }
