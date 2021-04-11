@@ -204,7 +204,7 @@ public class Main {
         }
         LocalDateTime finishDelLinkedMid = LocalDateTime.now();
         int durationDelLinkedMid = (int) ChronoUnit.MILLIS.between(startDelLinkedMid, finishDelLinkedMid);
-        System.out.println("Deleting elements from the beginning of the linked list takes " + durationDelLinkedMid + "ms");
+        System.out.println("Deleting elements from the middle of the linked list takes " + durationDelLinkedMid + "ms");
 
         LocalDateTime startDelLinkedEnd = LocalDateTime.now();
         for (int i = 0; i < 1000; i++) {
@@ -221,25 +221,25 @@ public class Main {
 //        Linked list creation takes 19ms
 //        -----------------------------------------------------------
 //        Adding elements to the beginning of the arraylist takes 0ms
-//        Adding elements to the middle of the arraylist takes 18ms
+//        Adding elements to the middle of the arraylist takes 20ms
 //        Adding elements to the end of the arraylist takes 0ms
 //        Adding elements to the beginning of the Linked list takes 0ms
-//        Adding elements to the middle of the Linked list takes 171ms
-//        Adding elements to the end of the Linked list takes 1ms
+//        Adding elements to the middle of the Linked list takes 161ms
+//        Adding elements to the end of the Linked list takes 0ms
 //        -----------------------------------------------------------
-//        Updating elements on the beginning of the arraylist takes 0ms
+//        Updating elements on the beginning of the arraylist takes 1ms
 //        Updating elements in the middle of the arraylist takes 0ms
 //        Updating elements at the end of the arraylist takes 0ms
-//        Updating elements on the beginning of the linked list takes 7ms
-//        Updating elements in the middle of the linked list takes 139ms
+//        Updating elements on the beginning of the linked list takes 6ms
+//        Updating elements in the middle of the linked list takes 175ms
 //        Updating elements at the end of the linked list takes 0ms
 //        -----------------------------------------------------------
-//        Deleting elements from the beginning of the arraylist takes 53ms
-//        Deleting elements from the middle of the arraylist takes 7ms
+//        Deleting elements from the beginning of the arraylist takes 42ms
+//        Deleting elements from the middle of the arraylist takes 13ms
 //        Deleting elements from the end of the arraylist takes 0ms
-//        Deleting elements from the beginning of the linked list takes 0ms
-//        Deleting elements from the beginning of the linked list takes 130ms
-//        Deleting elements from the end of the linked list takes 0ms
+//        Deleting elements from the beginning of the linked list takes 1ms
+//        Deleting elements from the middle of the linked list takes 127ms
+//        Deleting elements from the end of the linked list takes 1ms
 //
-//          In this test scenario, array list is faster than arraylist at all
-//          tasks, except deleting elements from the beginning
+//        In this test scenario, array list is faster than arraylist at all
+//        tasks, except deleting elements from the beginning
