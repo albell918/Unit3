@@ -7,7 +7,7 @@ package MyTaxi;
  * @class Taxi
  * @since 31.03.2021 - 21.19
  */
-public class Taxi implements ICalculate{
+public class Taxi{
 
     private int rideId;
     private String carNumber;
@@ -51,18 +51,9 @@ public class Taxi implements ICalculate{
     public String toString() {
         return "Taxi{" +
                 "rideId=" + rideId +
-                ", craNumber='" + carNumber + '\'' +
+                ", carNumber='" + carNumber + '\'' +
                 ", carModel='" + carModel + '\'' +
                 '}';
     }
 
-    @Override
-    public double calcRevenue() {
-        return 0;
-    }
-
-    @Override
-    public String showCarNumber() {
-        return this.getCarNumber();
-    }
 }

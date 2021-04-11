@@ -15,8 +15,8 @@ public class TaxiPerKm extends Taxi implements ICalculate{
     private double kilometres;
 
 
-    public TaxiPerKm(int raceId, String craNumber, String carModel, double basicFee, double feePerKilometer, double fuelPerKM, double kilometres) {
-        super(raceId, craNumber, carModel);
+    public TaxiPerKm(int raceId, String carNumber, String carModel, double basicFee, double feePerKilometer, double fuelPerKM, double kilometres) {
+        super(raceId, carNumber, carModel);
         this.basicFee = basicFee;
         this.feePerKilometer = feePerKilometer;
         this.fuelPerKM = fuelPerKM;

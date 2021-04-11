@@ -3,8 +3,6 @@ package MyTaxi;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.OptionalDouble;
-import java.util.stream.Stream;
 
 /**
  * @author Bieliaiev Oleksandr
@@ -31,6 +29,7 @@ public class View {
                         new TaxiPerTime(10, "AX79-91", "Renault 11", 60, 90, 2),
                         new TaxiPerTime(11, "AX79-91", "Renault 11", 60, 90, 5),
                         new TaxiPerTime(12, "AX82-17-NM", "Renault Logan", 84, 125, 2.5)
+
 
 
                 )
@@ -60,27 +59,27 @@ public class View {
 
 }
 
-//        Rides with 50+ revenue :TaxiPerKm{Taxi{rideId=3, craNumber='XA-622-CC', carModel='Daewoo Lanos'}basicFee=30.0, feePerKilometer=7.0, fuelPerKM=2.75, kilometres=15.0}Revenue :93.75
-//        Rides with 50+ revenue :TaxiPerKm{Taxi{rideId=4, craNumber='XA-622-CC', carModel='Daewoo Lanos'}basicFee=30.0, feePerKilometer=7.0, fuelPerKM=2.75, kilometres=8.5}Revenue :66.125
-//        Rides with 50+ revenue :TaxiPerKm{Taxi{rideId=6, craNumber='AX79-91', carModel='Renault 11'}basicFee=20.0, feePerKilometer=6.0, fuelPerKM=2.0, kilometres=10.25}Revenue :61.0
-//        Rides with 50+ revenue :TaxiPerTime{Taxi{rideId=7, craNumber='AX82-17-NM', carModel='Renault Logan'}fuelPerHour=84.0, feePerHour=125.0, hours=4.0}Revenue :164.0
-//        Rides with 50+ revenue :TaxiPerTime{Taxi{rideId=8, craNumber='AX19-17-KI', carModel='VAZ-09'}fuelPerHour=80.0, feePerHour=115.0, hours=4.0}Revenue :140.0
-//        Rides with 50+ revenue :TaxiPerKm{Taxi{rideId=9, craNumber='XA-622-CC', carModel='Daewoo Lanos'}basicFee=30.0, feePerKilometer=7.0, fuelPerKM=2.75, kilometres=8.0}Revenue :64.0
-//        Rides with 50+ revenue :TaxiPerTime{Taxi{rideId=10, craNumber='AX79-91', carModel='Renault 11'}fuelPerHour=60.0, feePerHour=90.0, hours=2.0}Revenue :60.0
-//        Rides with 50+ revenue :TaxiPerTime{Taxi{rideId=11, craNumber='AX79-91', carModel='Renault 11'}fuelPerHour=60.0, feePerHour=90.0, hours=5.0}Revenue :150.0
-//        Rides with 50+ revenue :TaxiPerTime{Taxi{rideId=7, craNumber='AX82-17-NM', carModel='Renault Logan'}fuelPerHour=84.0, feePerHour=125.0, hours=2.5}Revenue :102.5
+//        Rides with 50+ revenue :TaxiPerKm{Taxi{rideId=3, carNumber='XA-622-CC', carModel='Daewoo Lanos'}basicFee=30.0, feePerKilometer=7.0, fuelPerKM=2.75, kilometres=15.0}Revenue :93.75
+//        Rides with 50+ revenue :TaxiPerKm{Taxi{rideId=4, carNumber='XA-622-CC', carModel='Daewoo Lanos'}basicFee=30.0, feePerKilometer=7.0, fuelPerKM=2.75, kilometres=8.5}Revenue :66.125
+//        Rides with 50+ revenue :TaxiPerKm{Taxi{rideId=6, carNumber='AX79-91', carModel='Renault 11'}basicFee=20.0, feePerKilometer=6.0, fuelPerKM=2.0, kilometres=10.25}Revenue :61.0
+//        Rides with 50+ revenue :TaxiPerTime{Taxi{rideId=7, carNumber='AX82-17-NM', carModel='Renault Logan'}fuelPerHour=84.0, feePerHour=125.0, hours=4.0}Revenue :164.0
+//        Rides with 50+ revenue :TaxiPerTime{Taxi{rideId=8, carNumber='AX19-17-KI', carModel='VAZ-09'}fuelPerHour=80.0, feePerHour=115.0, hours=4.0}Revenue :140.0
+//        Rides with 50+ revenue :TaxiPerKm{Taxi{rideId=9, carNumber='XA-622-CC', carModel='Daewoo Lanos'}basicFee=30.0, feePerKilometer=7.0, fuelPerKM=2.75, kilometres=8.0}Revenue :64.0
+//        Rides with 50+ revenue :TaxiPerTime{Taxi{rideId=10, carNumber='AX79-91', carModel='Renault 11'}fuelPerHour=60.0, feePerHour=90.0, hours=2.0}Revenue :60.0
+//        Rides with 50+ revenue :TaxiPerTime{Taxi{rideId=11, carNumber='AX79-91', carModel='Renault 11'}fuelPerHour=60.0, feePerHour=90.0, hours=5.0}Revenue :150.0
+//        Rides with 50+ revenue :TaxiPerTime{Taxi{rideId=12, carNumber='AX82-17-NM', carModel='Renault Logan'}fuelPerHour=84.0, feePerHour=125.0, hours=2.5}Revenue :102.5
 //        ---------------------------------------------------------------------------------------------------------------------
-//        Time Fee: TaxiPerTime{Taxi{rideId=7, craNumber='AX82-17-NM', carModel='Renault Logan'}fuelPerHour=84.0, feePerHour=125.0, hours=4.0}
-//        Time Fee: TaxiPerTime{Taxi{rideId=8, craNumber='AX19-17-KI', carModel='VAZ-09'}fuelPerHour=80.0, feePerHour=115.0, hours=4.0}
-//        Time Fee: TaxiPerTime{Taxi{rideId=10, craNumber='AX79-91', carModel='Renault 11'}fuelPerHour=60.0, feePerHour=90.0, hours=2.0}
-//        Time Fee: TaxiPerTime{Taxi{rideId=11, craNumber='AX79-91', carModel='Renault 11'}fuelPerHour=60.0, feePerHour=90.0, hours=5.0}
-//        Time Fee: TaxiPerTime{Taxi{rideId=7, craNumber='AX82-17-NM', carModel='Renault Logan'}fuelPerHour=84.0, feePerHour=125.0, hours=2.5}
+//        Time Fee: TaxiPerTime{Taxi{rideId=7, carNumber='AX82-17-NM', carModel='Renault Logan'}fuelPerHour=84.0, feePerHour=125.0, hours=4.0}
+//        Time Fee: TaxiPerTime{Taxi{rideId=8, carNumber='AX19-17-KI', carModel='VAZ-09'}fuelPerHour=80.0, feePerHour=115.0, hours=4.0}
+//        Time Fee: TaxiPerTime{Taxi{rideId=10, carNumber='AX79-91', carModel='Renault 11'}fuelPerHour=60.0, feePerHour=90.0, hours=2.0}
+//        Time Fee: TaxiPerTime{Taxi{rideId=11, carNumber='AX79-91', carModel='Renault 11'}fuelPerHour=60.0, feePerHour=90.0, hours=5.0}
+//        Time Fee: TaxiPerTime{Taxi{rideId=12, carNumber='AX82-17-NM', carModel='Renault Logan'}fuelPerHour=84.0, feePerHour=125.0, hours=2.5}
 //        ---------------------------------------------------------------------------------------------------------------------
-//        "AX79-91": TaxiPerKm{Taxi{rideId=5, craNumber='AX79-91', carModel='Renault 11'}basicFee=20.0, feePerKilometer=6.0, fuelPerKM=2.0, kilometres=5.5}
-//        "AX79-91": TaxiPerKm{Taxi{rideId=6, craNumber='AX79-91', carModel='Renault 11'}basicFee=20.0, feePerKilometer=6.0, fuelPerKM=2.0, kilometres=10.25}
-//        "AX79-91": TaxiPerTime{Taxi{rideId=10, craNumber='AX79-91', carModel='Renault 11'}fuelPerHour=60.0, feePerHour=90.0, hours=2.0}
-//        "AX79-91": TaxiPerTime{Taxi{rideId=11, craNumber='AX79-91', carModel='Renault 11'}fuelPerHour=60.0, feePerHour=90.0, hours=5.0}
+//        "AX79-91": TaxiPerKm{Taxi{rideId=5, carNumber='AX79-91', carModel='Renault 11'}basicFee=20.0, feePerKilometer=6.0, fuelPerKM=2.0, kilometres=5.5}
+//        "AX79-91": TaxiPerKm{Taxi{rideId=6, carNumber='AX79-91', carModel='Renault 11'}basicFee=20.0, feePerKilometer=6.0, fuelPerKM=2.0, kilometres=10.25}
+//        "AX79-91": TaxiPerTime{Taxi{rideId=10, carNumber='AX79-91', carModel='Renault 11'}fuelPerHour=60.0, feePerHour=90.0, hours=2.0}
+//        "AX79-91": TaxiPerTime{Taxi{rideId=11, carNumber='AX79-91', carModel='Renault 11'}fuelPerHour=60.0, feePerHour=90.0, hours=5.0}
 //        ---------------------------------------------------------------------------------------------------------------------
 //        Average revenue PER KM is :58.339285714285715 Average revenue PER TIME is :123.3
-//        Total revenue is :1024.875 Max per ride :164.0 Min per ride :38.5
 //        ---------------------------------------------------------------------------------------------------------------------
+//        Total revenue is :1024.875 Max per ride :164.0 Min per ride :38.5

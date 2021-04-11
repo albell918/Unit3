@@ -16,8 +16,8 @@ public class TaxiPerTime extends Taxi implements ICalculate
     public TaxiPerTime() {
     }
 
-    public TaxiPerTime(int raceId, String craNumber, String carModel, double fuelPerHour, double feePerHour, double hours) {
-        super(raceId, craNumber, carModel);
+    public TaxiPerTime(int raceId, String carNumber, String carModel, double fuelPerHour, double feePerHour, double hours) {
+        super(raceId, carNumber, carModel);
         this.fuelPerHour = fuelPerHour;
         this.feePerHour = feePerHour;
         this.hours = hours;
