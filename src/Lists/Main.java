@@ -241,5 +241,5 @@ public class Main {
 //        Deleting elements from the middle of the linked list takes 127ms
 //        Deleting elements from the end of the linked list takes 1ms
 //
-//        In this test scenario, array list is faster than arraylist at all
+//        In this test scenario, array list is faster than linked list at all
 //        tasks, except deleting elements from the beginning
