@@ -31,29 +31,37 @@ public class View {
                         new TaxiPerTime(12, "AX82-17-NM", "Renault Logan", 84, 125, 2.5)
 
 
-
                 )
         );
 
         double totalRevenue = list.stream().mapToDouble(ICalculate::calcRevenue).sum();
+        double avgRevenue = list.stream().mapToDouble(ICalculate::calcRevenue).average().getAsDouble();
         double minRevenuePerRide = list.stream().mapToDouble(ICalculate::calcRevenue).min().getAsDouble();
         double maxRevenuePerRide = list.stream().mapToDouble(ICalculate::calcRevenue).max().getAsDouble();
-        list.stream().filter(ride -> ride.calcRevenue() > 50).forEach(ride -> System.out.println("Rides with 50+ revenue :" + ride + "Revenue :" + ride.calcRevenue()));
+        list.stream().filter(ride -> ride.calcRevenue() > 50)
+                .forEach(ride -> System.out.println("Rides with 50+ revenue :" + ride + "Revenue :" + ride.calcRevenue()));
         System.out.println("---------------------------------------------------------------------------------------------------------------------");
-        list.stream().filter(TaxiPerTime.class::isInstance).forEach(car -> System.out.println("Time Fee: " + car));
+        list.stream().filter(TaxiPerTime.class::isInstance)
+                .forEach(car -> System.out.println("Time Fee: " + car));
         System.out.println("---------------------------------------------------------------------------------------------------------------------");
-        list.stream().filter(ride -> ride.showCarNumber() == "AX79-91").forEach((car -> System.out.println("\"AX79-91\": " + car)));
+        list.stream().filter(ride -> ride.showCarNumber() == "AX79-91").
+                forEach((car -> System.out.println("\"AX79-91\": " + car)));
         System.out.println("---------------------------------------------------------------------------------------------------------------------");
 
 //        list.stream().filter(ride->ride.getClass().isInstance(new TaxiPerTime)).forEach();
 
-        double avgRevenuePerTIme = list.stream().filter(TaxiPerTime.class::isInstance).mapToDouble(ICalculate::calcRevenue).average().getAsDouble();
-        double avgRevenuePerKm = list.stream().filter(TaxiPerKm.class::isInstance).mapToDouble(ICalculate::calcRevenue).average().getAsDouble();
+        double avgRevenuePerTIme = list.stream().filter(TaxiPerTime.class::isInstance)
+                .mapToDouble(ICalculate::calcRevenue).average().getAsDouble();
+        double avgRevenuePerKm = list.stream().filter(TaxiPerKm.class::isInstance)
+                .mapToDouble(ICalculate::calcRevenue).average().getAsDouble();
+        String compareAvg = (avgRevenuePerKm >= avgRevenuePerTIme) ? "Tariff per Km iv more profitable" : "Tariff per time is more profitable";
 
-        System.out.println("Average revenue PER KM is :" + avgRevenuePerKm + " Average revenue PER TIME is :" + avgRevenuePerTIme);
+        System.out.println("Average revenue per ride :" + avgRevenue + '\n' + "Average revenue PER KM is :"
+                + avgRevenuePerKm + '\n' + "Average revenue PER TIME is :" + avgRevenuePerTIme + '\n' + "Result - " + compareAvg);
         System.out.println("---------------------------------------------------------------------------------------------------------------------");
 
-        System.out.println(" Total revenue is :" + totalRevenue + " Max per ride :" + maxRevenuePerRide + " Min per ride :" + minRevenuePerRide);
+        System.out.println("Total revenue is :" + totalRevenue + '\n' + "Max per ride :"
+                + maxRevenuePerRide + '\n' + "Min per ride :" + minRevenuePerRide);
 
     }
 
@@ -80,6 +88,11 @@ public class View {
 //        "AX79-91": TaxiPerTime{Taxi{rideId=10, carNumber='AX79-91', carModel='Renault 11'}fuelPerHour=60.0, feePerHour=90.0, hours=2.0}
 //        "AX79-91": TaxiPerTime{Taxi{rideId=11, carNumber='AX79-91', carModel='Renault 11'}fuelPerHour=60.0, feePerHour=90.0, hours=5.0}
 //        ---------------------------------------------------------------------------------------------------------------------
-//        Average revenue PER KM is :58.339285714285715 Average revenue PER TIME is :123.3
+//        Average revenue per ride :85.40625
+//        Average revenue PER KM is :58.339285714285715
+//        Average revenue PER TIME is :123.3
+//        Result - Tariff per time is more profitable
 //        ---------------------------------------------------------------------------------------------------------------------
-//        Total revenue is :1024.875 Max per ride :164.0 Min per ride :38.5
+//        Total revenue is :1024.875
+//        Max per ride :164.0
+//        Min per ride :38.5
